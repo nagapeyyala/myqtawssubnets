@@ -3,61 +3,71 @@ variable "region" {
   description = "region for currrent working template"
   default     = "us-east-1" #if the user doesn't pass the value this is the default
 }
-variable "network_name" {
-  type        = string
-  description = "vpc name"
-  default     = "nop"
-}
-variable "network_cidr" {
-  type        = string
-  description = " vpc network cidr"
-  default     = "10.0.0.0/16"
-}
-variable "subnet1_name"  {
-    type = string 
-    description = "subnet1 name"
-    default = "mysubnet1"
+
+variable "network_info" {
+  description = "This is netowork info"
+  type = object({
+    name = string
+    cidr = string
+  })
+  default = {
+    name = "nop"
+    cidr = "10.0.0.0/16"
+  }
 }
 
-variable "subnet1_cidr" {
-    type = string 
-    description = "subnet 1 cidr"
-    default = "10.0.0.0/24"
+variable "subnet1_info" {
+  description = "this subnet1 info"
+  type = object({
+    name = string
+    cidr = string
+    az   = string
+  })
+  default = {
+    name = "app1"
+    cidr = "10.0.1.0/24"
+    az   = "us-east-1a"
+  }
 }
 
-
-variable "subnet2_name"  {
-    type = string 
-    description = "subnet2 name"
-    default = "mysubnet2"
+variable "subnet2_info" {
+  description = "this is subnet2 info"
+  type = object({
+    name = string
+    cidr = string
+    az   = string
+  })
+  default = {
+    name = "app2"
+    cidr = "10.0.2.0/24"
+    az   = "us-east-1b"
+  }
 }
 
-variable "subnet2_cidr" {
-    type = string 
-    description = "subnet 2 cidr"
-    default = "10.0.1.0/24"
+variable "subnet3_info" {
+  description = " This is subnet3 info"
+  type = object({
+    name = string
+    cidr = string
+    az   = string
+  })
+  default = {
+    name = "db1"
+    cidr = "10.0.3.0/24"
+    az   = "us-east-1a"
+  }
 }
 
-variable "subnet3_name"  {
-    type = string 
-    description = "subnet3 name"
-    default = "mysubnet3"
+variable "subnet4_info" {
+  type = object({
+    name = string
+    cidr = string
+    az   = string
+  })
+  default = {
+    name = "db2"
+    cidr = "10.0.4.0/24"
+    az   = "us-east-1b"
+  }
 }
 
-variable "subnet3_cidr" {
-    type = string 
-    description = "subnet 3 cidr"
-    default = "10.0.2.0/24"
-}
-
-variable "subnet4_name"  {
-    type = string 
-    description = "subnet4 name"
-    default = "mysubnet4"
-}
-
-variable "subnet4_cidr" {
-    type = string 
-    description = "subnet 4 cidr"
-    default = "10.0.3.0/24"
-}

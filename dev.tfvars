@@ -1,11 +1,25 @@
 region = "us-east-1"
-subnet1_cidr = "192.168.0.0/24"
-subnet2_cidr = "192.168.1.0/24"
-subnet3_cidr = "192.168.2.0/24"
-subnet4_cidr = "192.168.3.0/24"
-network_cidr = "192.168.0.0/16"
-subnet1_name = "frontend1"
-subnet2_name = "backend1"
-subnet3_name = "frontend2"
-subnet4_name = "backend2"
-network_name = "projectx"
+network_info = {
+  name = "nop"
+  cidr = "192.168.0.0/16"
+}
+subnet1_info = {
+  name = "web-1"
+  cidr = "192.168.0.0/24"
+  az   = "us-east-1a"
+}
+subnet2_info = {
+  name = "web-2"
+  cidr  = "192.168.1.0/24"
+  az = "us-east-1b"
+}
+subnet3_info = {
+  name = "db-1"
+  cidr = "192.168.2.0/24"
+  az   = "us-east-1a"
+}
+subnet4_info = {
+  name = "db-2"
+  cidr = "192.168.3.0/24"
+  az   = "us-east-1b"
+}
