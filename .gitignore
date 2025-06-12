@@ -1,1 +1,25 @@
+# Ignore Terraform state files
+terraform.tfstate
+terraform.tfstate.*
+*.tfstate
+*.tfstate.*
+
+# Ignore crash logs
+crash.log
+
+# Ignore Terraform plan output
+*.tfplan
+
+# Ignore .terraform directory (plugin & module cache)
+.terraform/
+
+# Ignore Terraform variable files that may contain secrets
+terraform.tfvars
+*.tfvars
+
+# Ignore Terraform lock file (optional if team doesn't pin versions)
+.terraform.lock.hcl
+
+# Ignore directory for variables or other custom local dirs
+terraformvariables/
 
